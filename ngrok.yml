@@ -2,8 +2,10 @@ console_ui: true
 log_level: info
 log_format: json
 version: 2
-web_addr: localhost:4040
 tunnels:
   website:
     proto: http
     addr: 3838
+  cockpit:
+    proto: http
+    addr: 9090

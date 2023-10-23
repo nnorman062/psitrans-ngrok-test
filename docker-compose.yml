@@ -25,5 +25,3 @@ services:
     network_mode: "host"
     volumes:
       - ./ngrok.yml:/etc/ngrok.yml
-    ports:
-      - "4040:4040"
