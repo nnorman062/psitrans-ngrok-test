@@ -1,13 +1,10 @@
-authtoken: 1kYiu8Nwywo61ESG7t9PJS0G0xf_86tkUnWYQ7u31pWeDA1QH
+authtoken: ${NGROK_TOKEN} 
 console_ui: true
-  #console_ui_color: transparent
 log_level: info
 log_format: json
-  #log: /var/log/ngrok.log
 version: 2
 web_addr: localhost:4040
 tunnels:
   website:
     proto: http
     addr: 3838
-      #inspect: false
