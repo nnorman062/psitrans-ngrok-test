@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  psitransfer:
+    image: psitrax/psitransfer
+    restart: unless-stopped
+    environment:
+      - PSITRANSFER_ADMIN_PASS=${PSI_PASS}
+    volumes:
+      - ./data:/data
+    ports:
+      - "3838:3000"
+
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    restart: unless-stopped
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    network_mode: "host"
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+    ports:
+      - "4040:4040"
